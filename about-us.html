@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>About Us - Quik Chefs</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+tailwind.config = {
+  theme: {
+    extend: {
+      colors: {
+        primary: '#FF6B35',
+        secondary: '#2EC4B6'
+      },
+      borderRadius: {
+        'none': '0px',
+        'sm': '4px',
+        DEFAULT: '8px',
+        'md': '12px',
+        'lg': '16px',
+        'xl': '20px',
+        '2xl': '24px',
+        '3xl': '32px',
+        'full': '9999px',
+        'button': '8px'
+      }
+    }
+  }
+}
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css" rel="stylesheet">
+<style>
+  /* Add your custom styles here */
+</style>
+</head>
+<body class="bg-white">
+  <nav class="fixed w-full bg-white shadow-sm z-50 transition-all duration-300">
+    <div class="container mx-auto px-4 sm:px-6 py-4">
+    <div class="flex items-center justify-between">
+    <div class="flex items-center">
+    <img src="https://static.readdy.ai/image/cd04ccd88d837598dd335eb2d69c9b5b/d63d15039dbc7cd2c29bc3a3be1264c9.jpeg" alt="Quik Chefs Logo" class="h-12 sm:h-16">
+    <div class="hidden lg:flex items-center ml-16 space-x-8">
+    <a href="#home" class="text-gray-700 hover:text-primary transition-colors nav-link">Home</a>
+    <a href="about-us.html" class="text-gray-700 hover:text-primary transition-colors nav-link">About Us</a>
+    <a href="#cuisines" class="text-gray-700 hover:text-primary transition-colors nav-link">Cuisines</a>
+    <a href="#process" class="text-gray-700 hover:text-primary transition-colors nav-link">Hiring Process</a>
+    <a href="careers.html" class="text-gray-700 hover:text-primary transition-colors nav-link">Careers</a>
+    <a href="#faq" class="text-gray-700 hover:text-primary transition-colors nav-link">FAQ</a>
+    </div>
+    </div>
+    <div class="hidden lg:flex items-center space-x-4">
+    <a href="tel:+919990999811" class="text-gray-700 flex items-center mr-4 hover:text-primary">
+    <i class="ri-phone-line text-primary text-xl mr-1"></i>
+    <span class="font-medium">+91-9990999811</span>
+    </a>
+    <!-- <button class="px-6 py-2 text-primary border border-primary hover:bg-primary hover:text-white transition-colors !rounded-button whitespace-nowrap">Login</button> -->
+    <a href="requirement-form.html" class="px-6 py-2 bg-primary text-white hover:bg-opacity-90 transition-colors !rounded-button whitespace-nowrap">Hire Chefs</a>
+    </div>
+    <div class="lg:hidden">
+      <button id="mobile-menu-button" class="text-gray-500 hover:text-primary focus:outline-none">
+        <i class="ri-menu-line text-2xl"></i>
+      </button>
+    </div>
+    </div>
+    </div>
+    <div id="mobile-menu" class="hidden lg:hidden">
+    <div class="px-4 pt-2 pb-4 space-y-4">
+    <a href="#home" class="block text-gray-700 hover:text-primary transition-colors nav-link">Home</a>
+    <a href="about-us.html" class="text-gray-700 hover:text-primary transition-colors nav-link">About Us</a>
+    <a href="#cuisines" class="block text-gray-700 hover:text-primary transition-colors nav-link">Cuisines</a>
+    <a href="#process" class="block text-gray-700 hover:text-primary transition-colors nav-link">Hiring Process</a>
+    <a href="careers.html" class="block text-gray-700 hover:text-primary transition-colors nav-link">Careers</a>
+    <a href="#faq" class="block text-gray-700 hover:text-primary transition-colors nav-link">FAQ</a>
+    <div class="pt-4 border-t border-gray-200">
+    <a href="tel:+919990999811" class="flex items-center text-gray-700 hover:text-primary mb-4">
+    <i class="ri-phone-line text-primary text-xl mr-1"></i>
+    <span class="font-medium">+91-9990999811</span>
+    </a>
+    <!-- <button class="w-full mb-2 px-6 py-2 text-primary border border-primary hover:bg-primary hover:text-white transition-colors !rounded-button">Login</button> -->
+    <a href="requirement-form.html" class="w-full px-6 py-2 bg-primary text-white hover:bg-opacity-90 transition-colors !rounded-button">Hire Chefs</a>
+    </div>
+    </div>
+    </div>
+    </nav>
+
+  <section id="about-us" class="py-40 bg-white relative">
+    <div class="absolute inset-0 opacity-10">
+      <img src="https://static.readdy.ai/image/cd04ccd88d837598dd335eb2d69c9b5b/6a75729add4299caea13280e2c81f8c6.jpeg" class="w-full h-full object-cover" alt="Background">
+    </div>
+    <div class="container mx-auto px-6 relative">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+        <div class="relative h-[600px] w-full">
+          <img src="https://public.readdy.ai/ai/img_res/bbe863b0ad34e9f46fda6112aa0d834a.jpg" class="absolute inset-0 w-full h-full rounded-lg shadow-lg object-cover" alt="Our Team">
+        </div>
+
+        <div>
+          <h2 class="text-3xl font-bold text-gray-900 mb-6">About Quik Chefs</h2>
+          <div class="space-y-6">
+            <p class="text-gray-600">Founded in 2020, Quik Chefs has revolutionized the culinary staffing industry by connecting top-tier chefs with prestigious establishments across India. We understand that the heart of any successful restaurant lies in its kitchen, which is why we've dedicated ourselves to providing exceptional culinary talent.</p>
+            <div class="space-y-4">
+              <div class="flex items-start">
+                <i class="ri-check-line text-primary text-xl mr-3 mt-1"></i>
+                <div>
+                  <h4 class="font-semibold text-gray-900 mb-1">Expert Chef Network</h4>
+                  <p class="text-gray-600">We maintain a carefully curated network of over 500+ professional chefs specialized in various cuisines.</p>
+                </div>
+              </div>
+              <div class="flex items-start">
+                <i class="ri-check-line text-primary text-xl mr-3 mt-1"></i>
+                <div>
+                  <h4 class="font-semibold text-gray-900 mb-1">Quality Assurance</h4>
+                  <p class="text-gray-600">Rigorous verification process including background checks, skill assessment, and professional certification validation.</p>
+                </div>
+              </div>
+              <div class="flex items-start">
+                <i class="ri-check-line text-primary text-xl mr-3 mt-1"></i>
+                <div>
+                  <h4 class="font-semibold text-gray-900 mb-1">Pan India Presence</h4>
+                  <p class="text-gray-600">Operating in all major cities with local support teams ensuring seamless service delivery.</p>
+                </div>
+              </div>
+            </div>
+            <div class="grid grid-cols-3 gap-6 mt-8">
+              <div class="text-center">
+                <div class="text-3xl font-bold text-primary mb-2">5+</div>
+                <div class="text-sm text-gray-600">Years Experience</div>
+              </div>
+              <div class="text-center">
+                <div class="text-3xl font-bold text-primary mb-2">2000+</div>
+                <div class="text-sm text-gray-600">Successful Placements</div>
+              </div>
+              <div class="text-center">
+                <div class="text-3xl font-bold text-primary mb-2">98%</div>
+                <div class="text-sm text-gray-600">Client Satisfaction</div>
+              </div>
+            </div>
+            <div class="mt-8">
+              <button class="px-8 py-3 bg-primary text-white text-lg hover:bg-opacity-90 transition-colors !rounded-button">Learn More About Us</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Add your footer and scripts here -->
+</body>
+</html>

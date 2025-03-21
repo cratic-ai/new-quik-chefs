@@ -1,0 +1,692 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Quik Chefs - Empowering Restaurants with Expert Chefs</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+tailwind.config = {
+theme: {
+extend: {
+colors: {
+primary: '#FF6B35',
+secondary: '#2EC4B6'
+},
+borderRadius: {
+'none': '0px',
+'sm': '4px',
+DEFAULT: '8px',
+'md': '12px',
+'lg': '16px',
+'xl': '20px',
+'2xl': '24px',
+'3xl': '32px',
+'full': '9999px',
+'button': '8px'
+}
+}
+}
+}
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css" rel="stylesheet">
+<style>
+:where([class^="ri-"])::before { content: "\f3c2"; }
+body { font-family: 'Inter', sans-serif; }
+.hero-bg {
+background: linear-gradient(90deg, rgba(255,255,255,0.95) 0%, rgba(255,255,255,0.95) 50%, rgba(255,255,255,0) 100%);
+}
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+-webkit-appearance: none;
+margin: 0;
+}
+.faq-item.active .faq-answer {
+max-height: 500px;
+opacity: 1;
+}
+.faq-item .faq-answer {
+max-height: 0;
+opacity: 0;
+transition: all 0.3s ease-out;
+}
+/* Responsive Design */
+@media (max-width: 1024px) {
+.container {
+width: 100%;
+padding-left: 1rem;
+padding-right: 1rem;
+}
+}
+@media (max-width: 768px) {
+.hero-bg {
+background: linear-gradient(180deg, rgba(255,255,255,0.95) 0%, rgba(255,255,255,0.95) 100%);
+}
+}
+/* Mobile Menu Transition */
+#mobile-menu {
+transition: all 0.3s ease-in-out;
+}
+/* Hamburger Menu Animation */
+.hamburger-line {
+width: 24px;
+height: 2px;
+background-color: currentColor;
+transition: all 0.3s ease;
+}
+/* Professional Shadows */
+.shadow-professional {
+box-shadow: 0 2px 4px rgba(0,0,0,0.05),
+0 4px 6px rgba(0,0,0,0.05);
+}
+/* Smooth Transitions */
+.transition-professional {
+transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+</style>
+</head>
+<body class="bg-white">
+<nav class="fixed w-full bg-white shadow-sm z-50 transition-all duration-300">
+<div class="container mx-auto px-4 sm:px-6 py-4">
+<div class="flex items-center justify-between">
+<div class="flex items-center">
+<img src="https://static.readdy.ai/image/cd04ccd88d837598dd335eb2d69c9b5b/d63d15039dbc7cd2c29bc3a3be1264c9.jpeg" alt="Quik Chefs Logo" class="h-12 sm:h-16">
+<div class="hidden lg:flex items-center ml-16 space-x-8">
+    <a href="home.html" class="text-gray-700 hover:text-primary transition-colors nav-link">Home</a>
+<a href="about-us.html" class="text-gray-700 hover:text-primary transition-colors nav-link">About Us</a>
+<a href="#cuisines" class="text-gray-700 hover:text-primary transition-colors nav-link">Cuisines</a>
+<a href="#process" class="text-gray-700 hover:text-primary transition-colors nav-link">Hiring Process</a>
+<a href="careers.html" class="text-gray-700 hover:text-primary transition-colors nav-link">Careers</a>
+<a href="#faq" class="text-gray-700 hover:text-primary transition-colors nav-link">FAQ</a>
+</div>
+</div>
+<div class="hidden lg:flex items-center space-x-4">
+<a href="tel:+919990999811" class="text-gray-700 flex items-center mr-4 hover:text-primary">
+<i class="ri-phone-line text-primary text-xl mr-1"></i>
+<span class="font-medium">+91-9990999811</span>
+</a>
+<!-- <button class="px-6 py-2 text-primary border border-primary hover:bg-primary hover:text-white transition-colors !rounded-button whitespace-nowrap">Login</button> -->
+<a href="requirement-form.html" class="px-6 py-2 bg-primary text-white hover:bg-opacity-90 transition-colors !rounded-button whitespace-nowrap">Hire Chefs</a>
+</div>
+<div class="lg:hidden">
+  <button id="mobile-menu-button" class="text-gray-500 hover:text-primary focus:outline-none">
+    <i class="ri-menu-line text-2xl"></i>
+  </button>
+</div>
+</div>
+</div>
+<div id="mobile-menu" class="hidden lg:hidden">
+<div class="px-4 pt-2 pb-4 space-y-4">
+    <a href="home.html" class="text-gray-700 hover:text-primary transition-colors nav-link">Home</a>
+<a href="about-us.html" class="text-gray-700 hover:text-primary transition-colors nav-link">About Us</a>
+<a href="#cuisines" class="block text-gray-700 hover:text-primary transition-colors nav-link">Cuisines</a>
+<a href="#process" class="block text-gray-700 hover:text-primary transition-colors nav-link">Hiring Process</a>
+<a href="careers.html" class="block text-gray-700 hover:text-primary transition-colors nav-link">Careers</a>
+<a href="#faq" class="block text-gray-700 hover:text-primary transition-colors nav-link">FAQ</a>
+<div class="pt-4 border-t border-gray-200">
+<a href="tel:+919990999811" class="flex items-center text-gray-700 hover:text-primary mb-4">
+<i class="ri-phone-line text-primary text-xl mr-1"></i>
+<span class="font-medium">+91-9990999811</span>
+</a>
+<!-- <button class="w-full mb-2 px-6 py-2 text-primary border border-primary hover:bg-primary hover:text-white transition-colors !rounded-button">Login</button> -->
+<a href="requirement-form.html" class="w-full px-6 py-2 bg-primary text-white hover:bg-opacity-90 transition-colors !rounded-button">Hire Chefs</a>
+</div>
+</div>
+</div>
+</nav>
+<section id="home" class="pt-24 relative overflow-hidden min-h-screen flex items-center">
+<div class="absolute inset-0 z-0">
+<img src="https://public.readdy.ai/ai/img_res/b5488e135702b5c00ff732a4235e040d.jpg" class="w-full h-full object-cover" alt="Hero Background">
+</div>
+<div class="hero-bg relative z-10">
+<div class="container mx-auto px-6 py-20">
+<div class="max-w-2xl">
+<h1 class="text-5xl font-bold text-gray-900 mb-6">Empowering Restaurants with Expert Chefs</h1>
+<p class="text-xl text-gray-700 mb-8">Unlock the full potential of your restaurant with Quick Chefs – your trusted partner for high-quality, professional chef services. Our expert chefs bring unparalleled culinary expertise to establishments across PAN India. Whether you need temporary staffing flexibility or permanent kitchen leadership, we deliver excellence through our handpicked, experienced chefs who seamlessly integrate into your team.</p>
+<div class="flex space-x-4">
+<!-- <button class="px-8 py-3 bg-primary text-white text-lg hover:bg-opacity-90 transition-colors !rounded-button">Get Started</button> -->
+<!-- <button class="px-8 py-3 border border-gray-300 text-gray-700 text-lg hover:border-primary hover:text-primary transition-colors !rounded-button">Learn More</button> -->
+</div>
+<div class="mt-8">
+<div class="grid grid-cols-3 gap-8 mb-8">
+<div class="text-center">
+<div class="text-3xl font-bold text-primary mb-2">500+</div>
+<div class="text-gray-600">Expert Chefs</div>
+</div>
+<div class="text-center">
+<div class="text-3xl font-bold text-primary mb-2">300+</div>
+<div class="text-gray-600">Happy Clients</div>
+</div>
+<div class="text-center">
+<div class="text-3xl font-bold text-primary mb-2">25+</div>
+<div class="text-gray-600">Cuisine Types</div>
+</div>
+</div>
+<div class="bg-gray-50 rounded-lg p-6">
+<h3 class="text-lg font-semibold text-gray-900 mb-4">Cities We Serve</h3>
+<div class="mb-4">
+<p class="text-gray-600">We serve all cities across India! Here are some of our major service locations:</p>
+</div>
+<div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+<div>
+<h4 class="font-medium text-gray-900 mb-2">North India</h4>
+<ul class="text-sm text-gray-600 space-y-1">
+<li>Delhi</li>
+<li>Noida</li>
+<li>Gurgaon</li>
+<li>Chandigarh</li>
+<li>Lucknow</li>
+<li>Jaipur</li>
+<li>Dehradun</li>
+<li>Amritsar</li>
+<li>Agra</li>
+<li>Varanasi</li>
+</ul>
+</div>
+<div>
+<h4 class="font-medium text-gray-900 mb-2">South India</h4>
+<ul class="text-sm text-gray-600 space-y-1">
+<li>Bangalore</li>
+<li>Chennai</li>
+<li>Hyderabad</li>
+<li>Kochi</li>
+<li>Coimbatore</li>
+<li>Thiruvananthapuram</li>
+<li>Visakhapatnam</li>
+<li>Mangalore</li>
+<li>Mysore</li>
+<li>Puducherry</li>
+</ul>
+</div>
+<div>
+<h4 class="font-medium text-gray-900 mb-2">West India</h4>
+<ul class="text-sm text-gray-600 space-y-1">
+<li>Mumbai</li>
+<li>Pune</li>
+<li>Ahmedabad</li>
+<li>Surat</li>
+<li>Nagpur</li>
+<li>Vadodara</li>
+<li>Indore</li>
+<li>Bhopal</li>
+<li>Goa</li>
+<li>Nashik</li>
+</ul>
+</div>
+<div>
+<h4 class="font-medium text-gray-900 mb-2">East India</h4>
+<ul class="text-sm text-gray-600 space-y-1">
+<li>Kolkata</li>
+<li>Bhubaneswar</li>
+<li>Guwahati</li>
+<li>Patna</li>
+<li>Ranchi</li>
+<li>Siliguri</li>
+<li>Cuttack</li>
+<li>Shillong</li>
+<li>Gangtok</li>
+<li>Imphal</li>
+</ul>
+</div>
+</div>
+<div class="mt-4">
+<p class="text-gray-600 text-sm">Don't see your city? No worries! We operate across all cities in India. Contact us for chef services in your location.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="cuisines" class="py-20 bg-gray-50">
+<div class="container mx-auto px-4 sm:px-6 lg:px-8">
+<div class="text-center mb-16">
+<h2 class="text-3xl font-bold text-gray-900 mb-4">Specialized Cuisine Expertise</h2>
+<p class="text-gray-600 max-w-2xl mx-auto">From traditional delicacies to modern fusion creations, our master chefs bring diverse culinary expertise and innovative techniques to elevate your kitchen's offerings and exceed customer expectations.</p>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6 lg:gap-8">
+<div class="bg-white rounded-lg shadow-sm overflow-hidden">
+<img src="https://public.readdy.ai/ai/img_res/8514c0f34b126a7989b21954da157be8.jpg" class="w-full h-48 object-cover" alt="Indian Cuisine">
+<div class="p-6">
+<h3 class="text-xl font-semibold mb-2">Indian Cuisine</h3>
+<p class="text-gray-600 mb-4">Specializing in regional dishes from North to South India</p>
+<div class="flex items-center justify-between">
+<span class="text-sm text-gray-500">15+ Expert Chefs Available</span>
+<!-- <button class="text-primary hover:text-opacity-80">Learn More →</button> -->
+</div>
+</div>
+</div>
+<div class="bg-white rounded-lg shadow-sm overflow-hidden">
+<img src="https://public.readdy.ai/ai/img_res/c9762b459f6947e49f21311c13c94668.jpg" class="w-full h-48 object-cover" alt="Chinese Cuisine">
+<div class="p-6">
+<h3 class="text-xl font-semibold mb-2">Chinese Cuisine</h3>
+<p class="text-gray-600 mb-4">Expert chefs in traditional and modern Chinese cooking</p>
+<div class="flex items-center justify-between">
+<span class="text-sm text-gray-500">12+ Expert Chefs Available</span>
+<!-- <button class="text-primary hover:text-opacity-80">Learn More →</button> -->
+</div>
+</div>
+</div>
+<div class="bg-white rounded-lg shadow-sm overflow-hidden">
+<img src="https://public.readdy.ai/ai/img_res/e3f24ec58b766d9f698bd1308ff25630.jpg" class="w-full h-48 object-cover" alt="Italian Cuisine">
+<div class="p-6">
+<h3 class="text-xl font-semibold mb-2">Italian Cuisine</h3>
+<p class="text-gray-600 mb-4">Authentic Italian cooking with modern twists</p>
+<div class="flex items-center justify-between">
+<span class="text-sm text-gray-500">8+ Expert Chefs Available</span>
+<!-- <button class="text-primary hover:text-opacity-80">Learn More →</button> -->
+</div>
+</div>
+</div>
+<div class="bg-white rounded-lg shadow-sm overflow-hidden">
+<img src="https://public.readdy.ai/ai/img_res/7cd20b3a7aec2c38c81e7fdbb4b12d4a.jpg" class="w-full h-48 object-cover" alt="French Cuisine">
+<div class="p-6">
+<h3 class="text-xl font-semibold mb-2">French Cuisine</h3>
+<p class="text-gray-600 mb-4">Classical French cooking with contemporary flair</p>
+<div class="flex items-center justify-between">
+<span class="text-sm text-gray-500">10+ Expert Chefs Available</span>
+<!-- <button class="text-primary hover:text-opacity-80">Learn More →</button> -->
+</div>
+</div>
+</div>
+<div class="bg-white rounded-lg shadow-sm overflow-hidden">
+<img src="https://public.readdy.ai/ai/img_res/66e8231663664ccade5d753cc53c33f4.jpg" class="w-full h-48 object-cover" alt="Japanese Cuisine">
+<div class="p-6">
+<h3 class="text-xl font-semibold mb-2">Japanese Cuisine</h3>
+<p class="text-gray-600 mb-4">Traditional Japanese dishes with precision and artistry</p>
+<div class="flex items-center justify-between">
+<span class="text-sm text-gray-500">7+ Expert Chefs Available</span>
+<!-- <button class="text-primary hover:text-opacity-80">Learn More →</button> -->
+</div>
+</div>
+</div>
+<div class="bg-white rounded-lg shadow-sm overflow-hidden">
+<img src="https://public.readdy.ai/ai/img_res/8794fb85b28c4aa59ab9cef0e8fd2aef.jpg" class="w-full h-48 object-cover" alt="Mediterranean Cuisine">
+<div class="p-6">
+<h3 class="text-xl font-semibold mb-2">Mediterranean Cuisine</h3>
+<p class="text-gray-600 mb-4">Fresh Mediterranean flavors and healthy cooking</p>
+<div class="flex items-center justify-between">
+<span class="text-sm text-gray-500">9+ Expert Chefs Available</span>
+<!-- <button class="text-primary hover:text-opacity-80">Learn More →</button> -->
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+
+<section id="process" class="py-20">
+    <div class="container mx-auto px-6">
+    <div class="text-center mb-16">
+    <h2 class="text-3xl font-bold text-gray-900 mb-4">Simple Hiring Process</h2>
+    <p class="text-gray-600 max-w-2xl mx-auto">Experience a seamless journey to finding your ideal culinary talent with our straightforward 3-step process, backed by our risk-free trial guarantee for complete peace of mind.</p>
+    </div>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
+    <div class="text-center">
+    <div class="w-16 h-16 bg-primary bg-opacity-10 rounded-full flex items-center justify-center mx-auto mb-4">
+    <i class="ri-file-list-3-line text-primary text-2xl"></i>
+    </div>
+    <h3 class="text-xl font-semibold mb-2">Submit Requirements</h3>
+    <p class="text-gray-600">Fill out our detailed form with your specific needs and preferences</p>
+    </div>
+    <div class="text-center">
+    <div class="w-16 h-16 bg-primary bg-opacity-10 rounded-full flex items-center justify-center mx-auto mb-4">
+    <i class="ri-user-search-line text-primary text-2xl"></i>
+    </div>
+    <h3 class="text-xl font-semibold mb-2">Chef Selection</h3>
+    <p class="text-gray-600">We match you with the most suitable chefs for your needs</p>
+    </div>
+    <div class="text-center">
+    <div class="w-16 h-16 bg-primary bg-opacity-10 rounded-full flex items-center justify-center mx-auto mb-4">
+    <i class="ri-check-double-line text-primary text-2xl"></i>
+    </div>
+    <h3 class="text-xl font-semibold mb-2">Finalize & Start</h3>
+    <p class="text-gray-600">Complete the hiring process and welcome your new chef</p>
+    </div>
+    </div>
+    <div class="bg-white rounded-lg shadow-sm p-8">
+    <div class="text-center max-w-2xl mx-auto">
+    <h3 class="text-2xl font-bold text-gray-900 mb-4">Our Trial Guarantee</h3>
+    <p class="text-gray-600 mb-6">We understand finding the perfect chef is crucial for your business. That's why we offer up to 3 chef trials with a full refund guarantee if you're not satisfied.</p>
+    <div class="text-xl font-semibold text-primary mb-6">Starting from ₹8,000 per chef per month</div>
+    <div class="flex flex-col md:flex-row justify-center items-center gap-6">
+    <div class="flex items-center text-gray-700">
+    <i class="ri-shield-check-line text-primary text-2xl mr-2"></i>
+    <span>3 Chef Trials Available</span>
+    </div>
+    <div class="flex items-center text-gray-700">
+    <i class="ri-money-dollar-circle-line text-primary text-2xl mr-2"></i>
+    <span>100% Money-Back Guarantee</span>
+    </div>
+    <div class="flex items-center text-gray-700">
+    <i class="ri-time-line text-primary text-2xl mr-2"></i>
+    <span>No Long-Term Commitment</span>
+    </div>
+    </div>
+    </div>
+    </div>
+    </div>
+    </section>
+
+
+    <section id="faq" class="py-20 bg-gray-50">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+          <div class="text-center mb-16">
+            <h2 class="text-3xl font-bold text-gray-900 mb-4">Frequently Asked Questions</h2>
+            <p class="text-gray-600 max-w-2xl mx-auto">Find answers to common questions about our chef staffing services</p>
+          </div>
+          <div class="max-w-3xl mx-auto" id="faqContainer">
+            <!-- FAQ items will be dynamically inserted here -->
+          </div>
+        </div>
+      </section>
+      
+      <script>
+      document.addEventListener('DOMContentLoaded', () => {
+          const faqData = [
+            {
+              question: "What is Quik Chefs?",
+              answer: "Quik Chefs is a professional chef staffing service that connects restaurants, hotels, and cafes with skilled culinary experts. We provide comprehensive kitchen solutions including expert staffing, menu planning, and kitchen setup services."
+            },
+            {
+              question: "How long does it take to get a chef?",
+              answer: "Typically, we can provide suitable chef candidates within 2-3 working days. For emergency requirements, we also offer expedited services. The exact timeline may vary based on specific requirements and chef availability."
+            },
+            {
+              question: "What are your charges?",
+              answer: "Our charges vary based on the chef's experience level, cuisine specialization, and contract duration. Payment is required in advance to confirm the booking. We maintain transparent pricing with no hidden costs. Contact our team for a detailed quote based on your specific requirements."
+            },
+            {
+              question: "How do you verify chefs?",
+              answer: "We conduct thorough background checks, verify previous work experience, check FSSAI certifications, and collect references from previous employers. All our chefs undergo skill assessments and food safety training."
+            },
+            {
+              question: "What if we're not satisfied with the chef?",
+              answer: "We offer a replacement guarantee within the trial period. If you're not satisfied with the chef's performance, we'll provide suitable alternatives at no additional cost. We ensure minimal disruption to your kitchen operations."
+            }
+          ];
+      
+          const faqContainer = document.getElementById('faqContainer');
+          if (!faqContainer) {
+            console.error("FAQ container not found!");
+          } else {
+            console.log("FAQ container found. Inserting FAQ items...");
+          }
+      
+          faqData.forEach((item, index) => {
+            console.log(`Processing FAQ item ${index + 1}: ${item.question}`);
+            const faqItem = document.createElement('div');
+            faqItem.className = 'faq-item bg-white rounded-lg shadow-sm mb-4 overflow-hidden';
+            faqItem.innerHTML = `
+              <div class="flex items-center justify-between p-6 cursor-pointer">
+                <h3 class="text-lg font-semibold text-gray-900">${item.question}</h3>
+                <i class="ri-arrow-down-s-line text-xl text-gray-500"></i>
+              </div>
+              <div class="faq-answer px-6 pb-6">
+                <p class="text-gray-600">${item.answer}</p>
+              </div>
+            `;
+            faqContainer.appendChild(faqItem);
+            console.log(`Appended FAQ item ${index + 1} to container`);
+      
+            faqItem.querySelector('.flex').addEventListener('click', () => {
+              const wasActive = faqItem.classList.contains('active');
+              document.querySelectorAll('.faq-item').forEach(item => {
+                item.classList.remove('active');
+              });
+              if (!wasActive) {
+                faqItem.classList.add('active');
+              }
+            });
+          });
+      });
+      </script>
+
+  
+<section class="py-20 bg-white">
+<div class="container mx-auto px-4 sm:px-6 lg:px-8">
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+<div>
+<blockquote class="text-gray-600 text-lg leading-relaxed space-y-6">
+<p>When I started Quik Chefs, the mission was clear: To give every restaurant a great team of staff. Over the last 5+ years, we've faced challenges, stumbled, learned, and evolved—always striving to make our services better.</p>
+<p>Today, I'm proud to share that Quik Chefs has been awarded 'India's Most Prominent Startup in the Food and Hospitality Sector.' This recognition is a milestone, but it's also a reminder of how much work lies ahead and how many restaurants we're yet to serve.</p>
+<p>Believe me when I say this: Quik Chefs has just started. There's so much more to come. We're here to revolutionize the food and hospitality industry, one restaurant at a time.</p>
+<div class="mt-8 flex items-center">
+<img src="https://static.readdy.ai/image/cd04ccd88d837598dd335eb2d69c9b5b/6a75729add4299caea13280e2c81f8c6.jpeg" alt="Chirag Rexwal" class="w-16 h-16 rounded-full object-cover mr-4" style="outline: 3px solid #FF6B35; outline-offset: 2px;">
+<div>
+<div class="font-semibold text-gray-900">Chirag Rexwal</div>
+<div class="text-gray-500">CEO & Founder, Quik Chefs</div>
+</div>
+</div>
+</blockquote>
+</div>
+<div class="relative">
+<div class="absolute -right-4 -bottom-4 bg-primary w-32 h-32 rounded-lg opacity-10"></div>
+<div class="relative bg-white rounded-lg shadow-lg p-8">
+<div class="flex justify-between items-start mb-8">
+<div class="text-4xl text-primary">
+<i class="ri-double-quotes-l"></i>
+</div>
+<div class="flex space-x-1">
+<i class="ri-star-fill text-yellow-400"></i>
+<i class="ri-star-fill text-yellow-400"></i>
+<i class="ri-star-fill text-yellow-400"></i>
+<i class="ri-star-fill text-yellow-400"></i>
+<i class="ri-star-fill text-yellow-400"></i>
+</div>
+</div>
+<div class="space-y-6">
+<p class="text-gray-600 italic">"Working with Quik Chefs has transformed our kitchen operations. Their chefs bring not just skills but a fresh perspective that has elevated our menu and customer satisfaction."</p>
+<div class="flex items-center">
+<img src="https://public.readdy.ai/ai/img_res/4f59dcd8bf7895f4b8020ef24ab6f6ed.jpg" alt="Restaurant Manager" class="w-12 h-12 rounded-full object-cover mr-4">
+<div>
+<div class="font-semibold text-gray-900">Rajesh Sharma</div>
+<div class="text-gray-500">Operations Director, The Royal Kitchen</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<!-- footer section -->
+<footer class="bg-gray-900 text-white py-12">
+<div class="container mx-auto px-4 sm:px-6 lg:px-8">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+<div>
+<img src="https://static.readdy.ai/image/cd04ccd88d837598dd335eb2d69c9b5b/d63d15039dbc7cd2c29bc3a3be1264c9.jpeg" alt="Quik Chefs Logo" class="h-16 mb-4">
+<p class="text-gray-400">Rising CMG Pvt. Ltd. provides high quality Chef Service and end-to-end kitchen solutions Pan India with offices in Mumbai, Pune, Delhi, Bangalore & Chennai. We are committed to helping you achieve seamless operations and outstanding culinary experiences.</p>
+</div>
+<div>
+<h4 class="text-lg font-semibold mb-4">Quick Links</h4>
+<ul class="space-y-2">
+<li><a href="about-us.html" class="text-gray-400 hover:text-white">About Us</a></li>
+<li><a href="#" class="text-gray-400 hover:text-white">Services</a></li>
+<li><a href="careers.html" class="text-gray-400 hover:text-white">Careers</a></li>
+<li><a href="#" class="text-gray-400 hover:text-white">Contact</a></li>
+</ul>
+</div>
+<div>
+<h4 class="text-lg font-semibold mb-4">Contact Us</h4>
+<ul class="space-y-2">
+<li><a href="tel:+919136761900" class="flex items-center hover:text-white"><i class="ri-phone-line mr-2"></i> +91 91367 61900</a></li>
+<li class="flex items-center"><i class="ri-mail-line mr-2"></i> contact@quikchefs.com</li>
+<li class="flex items-center"><i class="ri-map-pin-line mr-2"></i> Pan India </li>
+</ul>
+</div>
+<div>
+<h4 class="text-lg font-semibold mb-4">Follow Us</h4>
+<div class="flex space-x-4">
+<a href="https://www.facebook.com/quikchefs" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-white w-8 h-8 flex items-center justify-center"><i class="ri-facebook-fill"></i></a>
+<a href="https://twitter.com/quikchefs" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-white w-8 h-8 flex items-center justify-center"><i class="ri-twitter-fill"></i></a>
+<a href="https://www.instagram.com/quikchefs" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-white w-8 h-8 flex items-center justify-center"><i class="ri-instagram-fill"></i></a>
+<a href="https://www.linkedin.com/company/quikchefs" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-white w-8 h-8 flex items-center justify-center"><i class="ri-linkedin-fill"></i></a>
+<a href="https://wa.me/919136761900" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-white w-8 h-8 flex items-center justify-center"><i class="ri-whatsapp-fill"></i></a>
+<a href="https://youtube.com/quikchefs" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-white w-8 h-8 flex items-center justify-center"><i class="ri-youtube-fill"></i></a>
+</div>
+</div>
+</div>
+<div class="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400">
+<p>&copy; 2025 Quik Chefs. All rights reserved.</p>
+</div>
+</div>
+
+
+
+<!-- Job Application Modal -->
+<div id="jobModal" class="fixed inset-0 bg-black bg-opacity-50 z-50 hidden">
+<div class="fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-white rounded-lg shadow-xl w-full max-w-2xl">
+<div class="p-6">
+<div class="flex justify-between items-center mb-6">
+<h3 class="text-2xl font-bold text-gray-900" id="jobTitle"></h3>
+<button onclick="closeJobModal()" class="text-gray-500 hover:text-gray-700">
+<i class="ri-close-line text-2xl"></i>
+</button>
+</div>
+<form id="jobApplicationForm" class="space-y-6">
+<div class="grid grid-cols-2 gap-6">
+<div>
+<label class="block text-sm font-medium text-gray-700 mb-2">First Name</label>
+<input type="text" class="w-full px-4 py-2 border border-gray-300 rounded focus:ring-2 focus:ring-primary focus:border-primary" required>
+</div>
+<div>
+<label class="block text-sm font-medium text-gray-700 mb-2">Last Name</label>
+<input type="text" class="w-full px-4 py-2 border border-gray-300 rounded focus:ring-2 focus:ring-primary focus:border-primary" required>
+</div>
+</div>
+<div>
+<label class="block text-sm font-medium text-gray-700 mb-2">Email</label>
+<input type="email" class="w-full px-4 py-2 border border-gray-300 rounded focus:ring-2 focus:ring-primary focus:border-primary" required>
+</div>
+<div>
+<label class="block text-sm font-medium text-gray-700 mb-2">Phone</label>
+<input type="tel" class="w-full px-4 py-2 border border-gray-300 rounded focus:ring-2 focus:ring-primary focus:border-primary" required>
+</div>
+<div>
+<label class="block text-sm font-medium text-gray-700 mb-2">Years of Experience</label>
+<input type="number" class="w-full px-4 py-2 border border-gray-300 rounded focus:ring-2 focus:ring-primary focus:border-primary" required>
+</div>
+<div>
+<label class="block text-sm font-medium text-gray-700 mb-2">Resume</label>
+<input type="file" accept=".pdf,.doc,.docx" class="w-full" required>
+<p class="text-sm text-gray-500 mt-1">Accepted formats: PDF, DOC, DOCX (Max 5MB)</p>
+</div>
+<div>
+<label class="block text-sm font-medium text-gray-700 mb-2">Cover Letter</label>
+<textarea class="w-full px-4 py-2 border border-gray-300 rounded focus:ring-2 focus:ring-primary focus:border-primary h-32" required></textarea>
+</div>
+<div class="flex justify-end space-x-4">
+<button type="button" onclick="closeJobModal()" class="px-6 py-2 border border-gray-300 text-gray-700 rounded hover:bg-gray-50 !rounded-button">Cancel</button>
+<button type="submit" class="px-6 py-2 bg-primary text-white rounded hover:bg-opacity-90 !rounded-button">Submit Application</button>
+</div>
+</form>
+</div>
+</div>
+</div>
+</footer>
+
+
+
+<script>
+const jobModal = document.getElementById('jobModal');
+const jobTitle = document.getElementById('jobTitle');
+const requirementForm = document.getElementById('requirementForm');
+requirementForm.addEventListener('submit', (e) => {
+e.preventDefault();
+const successMessage = document.createElement('div');
+successMessage.className = 'fixed top-4 right-4 bg-green-500 text-white px-6 py-3 rounded shadow-lg z-50';
+successMessage.textContent = 'Your requirements have been submitted successfully! Our team will contact you shortly.';
+document.body.appendChild(successMessage);
+requirementForm.reset();
+setTimeout(() => {
+successMessage.remove();
+}, 3000);
+});
+const jobApplicationForm = document.getElementById('jobApplicationForm');
+function openJobApplication(title) {
+jobTitle.textContent = title;
+jobModal.classList.remove('hidden');
+document.body.style.overflow = 'hidden';
+}
+function closeJobModal() {
+jobModal.classList.add('hidden');
+document.body.style.overflow = 'auto';
+}
+jobApplicationForm.addEventListener('submit', (e) => {
+e.preventDefault();
+const successMessage = document.createElement('div');
+successMessage.className = 'fixed top-4 right-4 bg-green-500 text-white px-6 py-3 rounded shadow-lg z-50';
+successMessage.textContent = 'Application submitted successfully!';
+document.body.appendChild(successMessage);
+closeJobModal();
+setTimeout(() => {
+successMessage.remove();
+}, 3000);
+});
+
+const mobileMenuButton = document.getElementById('mobile-menu-button');
+const mobileMenu = document.getElementById('mobile-menu');
+mobileMenuButton.addEventListener('click', () => {
+    mobileMenu.classList.toggle('hidden');
+});
+
+// Close mobile menu when clicking outside
+document.addEventListener('click', (e) => {
+    if (!mobileMenu.contains(e.target) && !mobileMenuButton.contains(e.target)) {
+        mobileMenu.classList.add('hidden');
+    }
+});
+
+// Smooth scroll for navigation links
+document.querySelectorAll('.nav-link').forEach(link => {
+    link.addEventListener('click', (e) => {
+        // Check if the link is for "Home", "About Us", or "Careers"
+        if (link.getAttribute('href').includes('home.html') || 
+            link.getAttribute('href').includes('about-us.html') || 
+            link.getAttribute('href').includes('careers.html')) {
+            return; // Allow default behavior (redirection)
+        }
+
+        // Prevent default behavior for other links
+        e.preventDefault();
+        const targetId = link.getAttribute('href').slice(1); // Remove the '#' from the href
+        const targetElement = document.getElementById(targetId);
+        if (targetElement) {
+            mobileMenu.classList.add('hidden'); // Close mobile menu when clicking a link
+            const offsetTop = targetElement.offsetTop - 80; // Adjust for fixed navbar height
+            window.scrollTo({
+                top: offsetTop,
+                behavior: 'smooth'
+            });
+        }
+    });
+});
+// Add responsive classes to all sections
+document.querySelectorAll('section').forEach(section => {
+section.classList.add('px-4', 'sm:px-6');
+});
+// Responsive grid layouts
+document.querySelectorAll('.grid').forEach(grid => {
+if (!grid.classList.contains('grid-cols-1')) {
+grid.classList.add('grid-cols-1', 'sm:grid-cols-2', 'lg:grid-cols-3');
+}
+});
+// Make text responsive
+document.querySelectorAll('h1, h2, h3, h4, h5, h6, p').forEach(element => {
+if (element.tagName === 'H1') {
+element.classList.add('text-3xl', 'sm:text-4xl', 'lg:text-5xl');
+} else if (element.tagName === 'H2') {
+element.classList.add('text-2xl', 'sm:text-3xl');
+} else if (element.tagName === 'H3') {
+element.classList.add('text-xl', 'sm:text-2xl');
+}
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Careers - Quik Chefs</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+tailwind.config = {
+  theme: {
+    extend: {
+      colors: {
+        primary: '#FF6B35',
+        secondary: '#2EC4B6'
+      },
+      borderRadius: {
+        'none': '0px',
+        'sm': '4px',
+        DEFAULT: '8px',
+        'md': '12px',
+        'lg': '16px',
+        'xl': '20px',
+        '2xl': '24px',
+        '3xl': '32px',
+        'full': '9999px',
+        'button': '8px'
+      }
+    }
+  }
+}
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css" rel="stylesheet">
+<style>
+  /* Add your custom styles here */
+</style>
+</head>
+<body class="bg-white">
+    <nav class="fixed w-full bg-white shadow-sm z-50 transition-all duration-300">
+        <div class="container mx-auto px-4 sm:px-6 py-4">
+        <div class="flex items-center justify-between">
+        <div class="flex items-center">
+        <img src="https://static.readdy.ai/image/cd04ccd88d837598dd335eb2d69c9b5b/d63d15039dbc7cd2c29bc3a3be1264c9.jpeg" alt="Quik Chefs Logo" class="h-12 sm:h-16">
+        <div class="hidden lg:flex items-center ml-16 space-x-8">
+        <a href="#home" class="text-gray-700 hover:text-primary transition-colors nav-link">Home</a>
+        <a href="about-us.html" class="text-gray-700 hover:text-primary transition-colors nav-link">About Us</a>
+        <a href="#cuisines" class="text-gray-700 hover:text-primary transition-colors nav-link">Cuisines</a>
+        <a href="#process" class="text-gray-700 hover:text-primary transition-colors nav-link">Hiring Process</a>
+        <a href="careers.html" class="text-gray-700 hover:text-primary transition-colors nav-link">Careers</a>
+        <a href="#faq" class="text-gray-700 hover:text-primary transition-colors nav-link">FAQ</a>
+        </div>
+        </div>
+        <div class="hidden lg:flex items-center space-x-4">
+        <a href="tel:+919990999811" class="text-gray-700 flex items-center mr-4 hover:text-primary">
+        <i class="ri-phone-line text-primary text-xl mr-1"></i>
+        <span class="font-medium">+91-9990999811</span>
+        </a>
+        <!-- <button class="px-6 py-2 text-primary border border-primary hover:bg-primary hover:text-white transition-colors !rounded-button whitespace-nowrap">Login</button> -->
+        <a href="requirement-form.html" class="px-6 py-2 bg-primary text-white hover:bg-opacity-90 transition-colors !rounded-button whitespace-nowrap">Hire Chefs</a>
+        </div>
+        <div class="lg:hidden">
+          <button id="mobile-menu-button" class="text-gray-500 hover:text-primary focus:outline-none">
+            <i class="ri-menu-line text-2xl"></i>
+          </button>
+        </div>
+        </div>
+        </div>
+        <div id="mobile-menu" class="hidden lg:hidden">
+        <div class="px-4 pt-2 pb-4 space-y-4">
+        <a href="#home" class="block text-gray-700 hover:text-primary transition-colors nav-link">Home</a>
+        <a href="about-us.html" class="text-gray-700 hover:text-primary transition-colors nav-link">About Us</a>
+        <a href="#cuisines" class="block text-gray-700 hover:text-primary transition-colors nav-link">Cuisines</a>
+        <a href="#process" class="block text-gray-700 hover:text-primary transition-colors nav-link">Hiring Process</a>
+        <a href="careers.html" class="block text-gray-700 hover:text-primary transition-colors nav-link">Careers</a>
+        <a href="#faq" class="block text-gray-700 hover:text-primary transition-colors nav-link">FAQ</a>
+        <div class="pt-4 border-t border-gray-200">
+        <a href="tel:+919990999811" class="flex items-center text-gray-700 hover:text-primary mb-4">
+        <i class="ri-phone-line text-primary text-xl mr-1"></i>
+        <span class="font-medium">+91-9990999811</span>
+        </a>
+        <!-- <button class="w-full mb-2 px-6 py-2 text-primary border border-primary hover:bg-primary hover:text-white transition-colors !rounded-button">Login</button> -->
+        <a href="requirement-form.html" class="w-full px-6 py-2 bg-primary text-white hover:bg-opacity-90 transition-colors !rounded-button">Hire Chefs</a>
+        </div>
+        </div>
+        </div>
+        </nav>
+
+<section id="careers" class="py-20 bg-gray-50">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center mb-16">
+    <h2 class="text-3xl font-bold text-gray-900 mb-4 py-10">Join Our Team</h2>
+    <p class="text-gray-600 max-w-2xl mx-auto">We're always looking for talented chefs and culinary professionals to join our growing team</p>
+    </div>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
+    <div class="bg-white rounded-lg shadow-sm p-8">
+    <h3 class="text-2xl font-bold text-gray-900 mb-6">Current Openings</h3>
+    <div class="space-y-6" id="jobListings">
+    <div class="border-b border-gray-100 pb-6">
+    <div class="flex justify-between items-start mb-2">
+    <div>
+    <h4 class="text-lg font-semibold text-gray-900">Senior Chef - Italian Cuisine</h4>
+    <p class="text-gray-600">Mumbai, Maharashtra</p>
+    </div>
+    <span class="px-3 py-1 bg-green-100 text-green-800 rounded-full text-sm">Full-time</span>
+    </div>
+    <p class="text-gray-600 mb-4">8+ years of experience in authentic Italian cuisine required. Must have expertise in pasta making and modern plating techniques.</p>
+    <button class="text-primary hover:text-opacity-80 font-medium" onclick="openJobApplication('Senior Chef - Italian Cuisine')">Apply Now →</button>
+    </div>
+    <div class="border-b border-gray-100 pb-6">
+    <div class="flex justify-between items-start mb-2">
+    <div>
+    <h4 class="text-lg font-semibold text-gray-900">Sous Chef - Pan Asian</h4>
+    <p class="text-gray-600">Bangalore, Karnataka</p>
+    </div>
+    <span class="px-3 py-1 bg-green-100 text-green-800 rounded-full text-sm">Full-time</span>
+    </div>
+    <p class="text-gray-600 mb-4">5+ years of experience in Asian cuisine. Knowledge of Thai, Japanese, and Chinese cooking methods essential.</p>
+    <button class="text-primary hover:text-opacity-80 font-medium" onclick="openJobApplication('Sous Chef - Pan Asian')">Apply Now →</button>
+    </div>
+    <div class="pb-6">
+    <div class="flex justify-between items-start mb-2">
+    <div>
+    <h4 class="text-lg font-semibold text-gray-900">Chef de Partie - Continental</h4>
+    <p class="text-gray-600">Delhi, NCR</p>
+    </div>
+    <span class="px-3 py-1 bg-green-100 text-green-800 rounded-full text-sm">Full-time</span>
+    </div>
+    <p class="text-gray-600 mb-4">3+ years of experience in continental cuisine. Strong knowledge of sauces and meat preparation required.</p>
+    <button class="text-primary hover:text-opacity-80 font-medium" onclick="openJobApplication('Chef de Partie - Continental')">Apply Now →</button>
+    </div>
+    </div>
+    </div>
+    <div class="bg-white rounded-lg shadow-sm p-8">
+    <h3 class="text-2xl font-bold text-gray-900 mb-6">Why Join Us?</h3>
+    <div class="space-y-6">
+    <div class="flex items-start">
+    <div class="w-12 h-12 bg-primary bg-opacity-10 rounded-lg flex items-center justify-center flex-shrink-0">
+    <i class="ri-money-dollar-circle-line text-primary text-2xl"></i>
+    </div>
+    <div class="ml-4">
+    <h4 class="text-lg font-semibold text-gray-900 mb-1">Competitive Compensation</h4>
+    <p class="text-gray-600">Industry-leading salary packages with performance bonuses</p>
+    </div>
+    </div>
+    <div class="flex items-start">
+    <div class="w-12 h-12 bg-primary bg-opacity-10 rounded-lg flex items-center justify-center flex-shrink-0">
+    <i class="ri-building-line text-primary text-2xl"></i>
+    </div>
+    <div class="ml-4">
+    <h4 class="text-lg font-semibold text-gray-900 mb-1">Career Growth</h4>
+    <p class="text-gray-600">Clear career progression path with regular training opportunities</p>
+    </div>
+    </div>
+    <div class="flex items-start">
+    <div class="w-12 h-12 bg-primary bg-opacity-10 rounded-lg flex items-center justify-center flex-shrink-0">
+    <i class="ri-heart-pulse-line text-primary text-2xl"></i>
+    </div>
+    <div class="ml-4">
+    <h4 class="text-lg font-semibold text-gray-900 mb-1">Health Benefits</h4>
+    <p class="text-gray-600">Comprehensive health insurance for you and your family</p>
+    </div>
+    </div>
+    <div class="flex items-start">
+    <div class="w-12 h-12 bg-primary bg-opacity-10 rounded-lg flex items-center justify-center flex-shrink-0">
+    <i class="ri-team-line text-primary text-2xl"></i>
+    </div>
+    <div class="ml-4">
+    <h4 class="text-lg font-semibold text-gray-900 mb-1">Great Culture</h4>
+    <p class="text-gray-600">Work with passionate professionals in a collaborative environment</p>
+    </div>
+    </div>
+    </div>
+    </div>
+    </div>
+    <div class="text-center">
+    <a href="mailto:careers@quikchefs.com" class="inline-flex items-center justify-center px-8 py-3 bg-primary text-white text-lg hover:bg-opacity-90 transition-colors !rounded-button">
+    <i class="ri-mail-line mr-2"></i>
+    Send Your Resume
+    </a>
+    </div>
+    </div>
+    </section>
+
+    

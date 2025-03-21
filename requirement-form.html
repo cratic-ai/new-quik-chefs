@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Careers - Quik Chefs</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+tailwind.config = {
+  theme: {
+    extend: {
+      colors: {
+        primary: '#FF6B35',
+        secondary: '#2EC4B6'
+      },
+      borderRadius: {
+        'none': '0px',
+        'sm': '4px',
+        DEFAULT: '8px',
+        'md': '12px',
+        'lg': '16px',
+        'xl': '20px',
+        '2xl': '24px',
+        '3xl': '32px',
+        'full': '9999px',
+        'button': '8px'
+      }
+    }
+  }
+}
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css" rel="stylesheet">
+<style>
+  /* Add your custom styles here */
+</style>
+</head>
+<body class="bg-white">
+    <nav class="fixed w-full bg-white shadow-sm z-50 transition-all duration-300">
+        <div class="container mx-auto px-4 sm:px-6 py-4">
+        <div class="flex items-center justify-between">
+        <div class="flex items-center">
+        <img src="https://static.readdy.ai/image/cd04ccd88d837598dd335eb2d69c9b5b/d63d15039dbc7cd2c29bc3a3be1264c9.jpeg" alt="Quik Chefs Logo" class="h-12 sm:h-16">
+        <div class="hidden lg:flex items-center ml-16 space-x-8">
+        <a href="#home" class="text-gray-700 hover:text-primary transition-colors nav-link">Home</a>
+        <a href="about-us.html" class="text-gray-700 hover:text-primary transition-colors nav-link">About Us</a>
+        <a href="#cuisines" class="text-gray-700 hover:text-primary transition-colors nav-link">Cuisines</a>
+        <a href="#process" class="text-gray-700 hover:text-primary transition-colors nav-link">Hiring Process</a>
+        <a href="careers.html" class="text-gray-700 hover:text-primary transition-colors nav-link">Careers</a>
+        <a href="#faq" class="text-gray-700 hover:text-primary transition-colors nav-link">FAQ</a>
+        </div>
+        </div>
+        <div class="hidden lg:flex items-center space-x-4">
+        <a href="tel:+919990999811" class="text-gray-700 flex items-center mr-4 hover:text-primary">
+        <i class="ri-phone-line text-primary text-xl mr-1"></i>
+        <span class="font-medium">+91-9990999811</span>
+        </a>
+        <!-- <button class="px-6 py-2 text-primary border border-primary hover:bg-primary hover:text-white transition-colors !rounded-button whitespace-nowrap">Login</button> -->
+        <a href="requirement-form.html" class="px-6 py-2 bg-primary text-white hover:bg-opacity-90 transition-colors !rounded-button whitespace-nowrap">Hire Chefs</a>
+        </div>
+        <div class="lg:hidden">
+          <button id="mobile-menu-button" class="text-gray-500 hover:text-primary focus:outline-none">
+            <i class="ri-menu-line text-2xl"></i>
+          </button>
+        </div>
+        </div>
+        </div>
+        <div id="mobile-menu" class="hidden lg:hidden">
+        <div class="px-4 pt-2 pb-4 space-y-4">
+        <a href="#home" class="block text-gray-700 hover:text-primary transition-colors nav-link">Home</a>
+        <a href="about-us.html" class="text-gray-700 hover:text-primary transition-colors nav-link">About Us</a>
+        <a href="#cuisines" class="block text-gray-700 hover:text-primary transition-colors nav-link">Cuisines</a>
+        <a href="#process" class="block text-gray-700 hover:text-primary transition-colors nav-link">Hiring Process</a>
+        <a href="careers.html" class="block text-gray-700 hover:text-primary transition-colors nav-link">Careers</a>
+        <a href="#faq" class="block text-gray-700 hover:text-primary transition-colors nav-link">FAQ</a>
+        <div class="pt-4 border-t border-gray-200">
+        <a href="tel:+919990999811" class="flex items-center text-gray-700 hover:text-primary mb-4">
+        <i class="ri-phone-line text-primary text-xl mr-1"></i>
+        <span class="font-medium">+91-9990999811</span>
+        </a>
+        <!-- <button class="w-full mb-2 px-6 py-2 text-primary border border-primary hover:bg-primary hover:text-white transition-colors !rounded-button">Login</button> -->
+        <a href="requirement-form.html" class="w-full px-6 py-2 bg-primary text-white hover:bg-opacity-90 transition-colors !rounded-button">Hire Chefs</a>
+        </div>
+        </div>
+        </div>
+        </nav>
+
+  <!-- Form Section -->
+  <section id="process" class="pt-24 py-60">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-16">
+        <h2 class="text-3xl font-bold text-gray-900 mb-4">Simple Hiring Process</h2>
+        <p class="text-gray-600 max-w-2xl mx-auto">Experience a seamless journey to finding your ideal culinary talent with our straightforward 3-step process, backed by our risk-free trial guarantee for complete peace of mind.</p>
+      </div>
+      <div class="max-w-3xl mx-auto bg-white rounded-lg shadow-lg p-8 mb-16">
+        <h3 class="text-2xl font-semibold text-gray-900 mb-6">Submit Your Requirements</h3>
+        <form id="requirementForm" class="space-y-6">
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div>
+              <label class="block text-sm font-medium text-gray-700 mb-2">Your Name*</label>
+              <input type="text" name="name" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-primary" required>
+            </div>
+            <div>
+              <label class="block text-sm font-medium text-gray-700 mb-2">Restaurant/Business Name*</label>
+              <input type="text" name="business" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-primary" required>
+            </div>
+            <div>
+              <label class="block text-sm font-medium text-gray-700 mb-2">Email Address*</label>
+              <input type="email" name="email" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-primary" required>
+            </div>
+            <div>
+              <label class="block text-sm font-medium text-gray-700 mb-2">Phone Number*</label>
+              <input type="tel" name="phone" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-primary" required>
+            </div>
+          </div>
+          <div>
+            <label class="block text-sm font-medium text-gray-700 mb-2">Required Cuisine Specialization*</label>
+            <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
+              <label class="flex items-center space-x-2">
+                <input type="checkbox" name="cuisine" value="indian" class="w-4 h-4 text-primary">
+                <span>Indian</span>
+              </label>
+              <label class="flex items-center space-x-2">
+                <input type="checkbox" name="cuisine" value="chinese" class="w-4 h-4 text-primary">
+                <span>Chinese</span>
+              </label>
+              <label class="flex items-center space-x-2">
+                <input type="checkbox" name="cuisine" value="italian" class="w-4 h-4 text-primary">
+                <span>Italian</span>
+              </label>
+              <label class="flex items-center space-x-2">
+                <input type="checkbox" name="cuisine" value="french" class="w-4 h-4 text-primary">
+                <span>French</span>
+              </label>
+              <label class="flex items-center space-x-2">
+                <input type="checkbox" name="cuisine" value="japanese" class="w-4 h-4 text-primary">
+                <span>Japanese</span>
+              </label>
+              <label class="flex items-center space-x-2">
+                <input type="checkbox" name="cuisine" value="mediterranean" class="w-4 h-4 text-primary">
+                <span>Mediterranean</span>
+              </label>
+            </div>
+          </div>
+          <div>
+            <label class="block text-sm font-medium text-gray-700 mb-2">Experience Level Required*</label>
+            <select name="experience" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-primary" required>
+              <option value="">Select Experience Level</option>
+              <option value="1-3">1-3 Years</option>
+              <option value="3-5">3-5 Years</option>
+              <option value="5-8">5-8 Years</option>
+              <option value="8+">8+ Years</option>
+            </select>
+          </div>
+          <div>
+            <label class="block text-sm font-medium text-gray-700 mb-2">Contract Duration*</label>
+            <select name="duration" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-primary" required>
+              <option value="">Select Duration</option>
+              <option value="1-month">1 Month</option>
+              <option value="3-months">3 Months</option>
+              <option value="6-months">6 Months</option>
+              <option value="1-year">1 Year</option>
+              <option value="permanent">Permanent</option>
+            </select>
+          </div>
+          <div>
+            <label class="block text-sm font-medium text-gray-700 mb-2">Number of Chefs Required*</label>
+            <input type="number" name="chefCount" min="1" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-primary" required>
+          </div>
+          <div>
+            <label class="block text-sm font-medium text-gray-700 mb-2">Additional Requirements</label>
+            <textarea name="requirements" rows="4" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-primary" placeholder="Please specify any additional requirements, special skills, or preferences..."></textarea>
+          </div>
+          <div class="flex justify-end">
+            <button type="submit" class="px-8 py-3 bg-primary text-white text-lg hover:bg-opacity-90 transition-colors !rounded-button">Submit Requirements</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- JavaScript for Form Submission -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const requirementForm = document.getElementById('requirementForm');
+      if (!requirementForm) {
+        console.error("Requirement form not found!");
+        return;
+      }
+
+      requirementForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+        const successMessage = document.createElement('div');
+        successMessage.className = 'fixed top-4 right-4 bg-green-500 text-white px-6 py-3 rounded shadow-lg z-50';
+        successMessage.textContent = 'Your requirements have been submitted successfully! Our team will contact you shortly.';
+        document.body.appendChild(successMessage);
+        requirementForm.reset();
+        setTimeout(() => {
+          successMessage.remove();
+        }, 3000);
+      });
+    });
+  </script>
+</body>
+</html>
